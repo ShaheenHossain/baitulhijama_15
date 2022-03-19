@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+        <record id="baitulhijama_ticket_form" model="ir.ui.view">
+        <field name="name">crm.bhf.form</field>
+        <field name="model">crm.bhf</field>
+        <field name="arch" type="xml">
+            <form string="Patient form">
+                <sheet>
+                    <group col='3'>
+                        <field name="name" string="Name"/>
+                        <field name="patient_age"/>
+                        <field name="marital_status"/>
+                        <field name="father_name"/>
+                        <field name="mother_name"/>
+                        <field name="mobile"/>
+                        <field name="whatsapp_imo"/>
+                        <field name="email" />
+                        <field name="address"/>
+                        <field name="ques_01" />
+                        <field name="ques_02"/>
+                        <field name="ques_03"/>
+                        <field name="ques_04"/>
+                        <field name="ques_05"/>
+                        <field name="ques_06"/>
+                        <field name="ques_07"/>
+                        <field name="ques_08"/>
+                        <field name="ques_09"/>
+                        <field name="ques_10"/>
+                        <field name="ques_11"/>
+                        <field name="ques_12"/>
+                        <field name="ques_13"/>
+                        <field name="ques_14"/>
+                        <field name="ques_15"/>
+                        <field name="ques_16"/>
+                        <field name="ques_17"/>
+                        <field name="ques_18"/>
+                        <field name="ques_19"/>
+                        <field name="ques_20"/>
+                        <field name="ques_21"/>
+                        <field name="ques_22"/>
+                        <field name="ques_23"/>
+                        <field name="ques_24"/>
+                        <field name="ques_25"/>
+                        <field name="ques_26"/>
+                        <field name="ques_27"/>
+                        <field name="ques_28"/>
+                        <field name="ques_29"/>
+                        <field name="ques_30"/>
+                        <field name="ques_31"/>
+                        <field name="ques_32"/>
+                        <field name="ques_33"/>
+                        <field name="ques_34"/>
+                        <field name="ques_35"/>
+                        <field name="promising_true"/>
+                        <field name="payment_method"/>
+                        <field name="payment_transactionid"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="baitulhijama_ticket_tree" model="ir.ui.view">
+        <field name="name">baitulhijama.ticket.tree</field>
+        <field name="model">crm.bhf</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Name"/>
+                <field name="patient_age"/>
+                <field name="marital_status"/>
+                <field name="father_name"/>
+                <field name="mother_name"/>
+                <field name="mobile"/>
+                <field name="whatsapp_imo"/>
+                <field name="email"/>
+                <field name="address"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="baitulhijma_action_ticket" model="ir.actions.act_window">
+        <field name="name">Patient Form</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.bhf</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Patient form!
+            </p>
+        </field>
+    </record>
+
+   <record id="action_baitulhijama_report" model="ir.actions.report">
+        <field name="name">Baitul Hijama Report</field>
+        <field name="model">crm.bhf</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">baitulhijama.report_baitulhijama_patient_form</field>
+        <field name="report_file">baitulhijama.report_baitulhijama_patient_form</field>
+        <field name="binding_model_id" ref="model_crm_bhf"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <menuitem id="baitulhijama_root" name="Baitul Hijama Patient" sequence="10"/>
+    <menuitem id="baitulhijama_helpdesk_root" name="Patient Details"  parent="baitulhijama_root" sequence="10"/>
+    <menuitem id="baitulhijama_helpdesk" name="Patient Details Information" parent="baitulhijama_helpdesk_root" action="baitulhijma_action_ticket" sequence="10"/>
+
+
+</odoo>

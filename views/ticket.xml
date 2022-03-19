@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="ticket_welcome" name="Welcome">
+        <t t-call="website.layout">
+
+<!--
+            <a t-attf-href="'/report/pdf/crm_bhf.report_baitulhijama_patient_form/%s' % id">
+                <button type="button" class="btn btn-primary btn-md o_website_form_send">Print Form</button>
+            </a> -->
+
+<!--            <a t-att-href="/report/bhf_val/">
+                <button type="button" class="btn btn-primary btn-md ">Print Report</button>
+            </a>-->
+
+
+<!--            <a t-attf-href="/report/pdf/crm.bhf.baitulhijama.report_baitulhijama_patient_form/#{i.id}">
+                 <button type="button" class="btn btn-primary btn-md o_website_form_send">Print Form1</button>
+            </a>-->
+
+
+
+            <div class="container" style="margin-top:20px; margin-bottom:20px; min-height:240px;">
+                <h2>Patient Form Number:
+                    <span t-esc="ticket_no"></span>
+                </h2>
+                <h4>উপরের তথ্য প্রদান করার জন্য আপনাকে অনেক ধন্যবাদ</h4>
+<!--                Thank you so much for providing the above information-->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="alert alert-success" role="status">
+                            <p>
+                                আপনার ফর্ম সফলভাবে নিবন্ধিত হয়েছে আমরা খুব শীঘ্রই আপনার সাথে যোগাযোগ করব
+                               কোনো জরুরি হলে আরও সহায়তার জন্য +8801711532483 এ যোগাযোগ করুন।
+                                Detail of Patient information:
+                                <table>
+                                    <tr><td>Patient Form No</td><td>:</td><td t-esc="ticket_no"></td></tr>
+                                    <tr><td>রোগীর নাম</td><td>:</td><td t-esc="name"></td></tr>
+                                    <tr><td>রোগীর বয়স</td><td>:</td><td t-esc="patient_age"></td></tr>
+                                    <tr><td>বৈবাহিক অবস্থা</td><td>:</td><td t-esc="marital_status"></td></tr>
+                                    <tr><td>মোবাইল নম্বর</td><td>:</td><td t-esc="mobile"></td></tr>
+                                    <tr><td>Whatsapp Imo No.</td><td>:</td><td t-esc="whatsapp_imo"></td></tr>
+                                    <tr><td>বাবার নাম</td><td>:</td><td t-esc="father_name"></td></tr>
+                                    <tr><td>মায়ের নাম</td><td>:</td><td t-esc="mother_name"></td></tr>
+                                    <tr><td>Email</td><td>:</td><td t-esc="email"></td></tr>
+                                    <tr><td>ঠিকানা</td><td>:</td><td t-esc="address"></td></tr>
+                                    <t t-if="ques_01"><tr><td>একের পর এক অসুখ লেগেই থাকে কিন্তু মেডিকেল টেস্ট এ ধরা পরে না</td></tr></t>
+                                    <t t-if="ques_02"><tr><td>সর্দি, কাশি, জ্বর লেগে থাকা </td></tr></t>
+                                    <t t-if="ques_03"><tr><td>ডায়রিয়া, আমাশয় ভালো না হওয়া </td></tr></t>
+                                    <t t-if="ques_04"><tr><td>পড়াশোনায় মন না বসা</td></tr></t>
+                                    <t t-if="ques_05"><tr><td>এবাদতে আগ্রহ হারিয়ে ফেলা</td></tr></t>
+                                    <t t-if="ques_06"><tr><td>প্রায়শই শরীর দুর্বল থাকা, বমি বমি ভাব লাগা</td></tr></t>
+                                    <t t-if="ques_07"><tr><td>সব সময় ঘুম ঘুম ভাব থাকা, সারাদিন হাই উঠা</td></tr></t>
+                                    <t t-if="ques_08"><tr><td>খাবারে রুচি না পাওয়া, ক্ষুধামন্দা</td></tr></t>
+                                    <t t-if="ques_09"><tr><td>অহেতুক মেজাজ বিগড়ে থাকা</td></tr></t>
+                                    <t t-if="ques_10"><tr><td>অল্পতে রাগ উঠা এবং সহজে রাগ দূর না হওয়া</td></tr></t>
+                                    <t t-if="ques_11"><tr><td>বুক ধড়পড় করা, ডোম বন্ধ বা অস্বস্তি লাগা</td></tr></t>
+                                    <t t-if="ques_12"><tr><td>অহেতুক মাথা ঝিম ধরে থাকা</td></tr></t>
+                                    <t t-if="ques_13"><tr><td>পেটে প্রকার গ্যাস হওয়া, ওষুধ খেয়েও ফায়দা না হওয়া</td></tr></t>
+                                    <t t-if="ques_14"><tr><td>কোনো কারণ ছাড়াই কান্না আসা</td></tr></t>
+                                    <t t-if="ques_15"><tr><td>আত্মীয় স্বজন বা বন্ধুদের সাথে দেখা করতে ভালো না লাগা</td></tr></t>
+                                    <t t-if="ques_16"><tr><td>নিদ্রাহীনতা অথবা প্রশান্তিময় ঘুম না হওয়া</td></tr></t>
+                                    <t t-if="ques_17"><tr><td>উদ্বিগ্নতা, সারাক্ষন অস্থিরতা বিরাজমান থাকা</td></tr></t>
+                                    <t t-if="ques_18"><tr><td>মাঝে মাঝে বোবায় ধরা</td></tr></t>
+                                    <t t-if="ques_19"><tr><td>ঘুমের মাঝে চিৎকার করা, গোংরানো, হাসি বা কান্না করা</td></tr></t>
+                                    <t t-if="ques_20"><tr><td>ঘুমের মধ্যে হাঁটাহাঁটি করা</td></tr></t>
+                                    <t t-if="ques_21"><tr><td>স্বপ্নে কোনো প্রাণী কে আক্রমণ বা ধাওয়া করতে দেখা</td></tr></t>
+                                    <t t-if="ques_22"><tr><td>স্বপ্নে নিজেকে উঁচু কোনো জায়গা থেকে পরে যেতে দেখা</td></tr></t>
+                                    <t t-if="ques_23"><tr><td>স্বপ্নে জ্বিন, ভুত বা ভয়ংকর কিছু দেখা</td></tr></t>
+                                    <t t-if="ques_24"><tr><td>ঘুমের ভেতর কেঁপে উঠা বা ঝাকি দিয়ে জেগে যাওয়া</td></tr></t>
+                                    <t t-if="ques_25"><tr><td>স্বপ্নে কবরস্থান, শ্মশান বা কোনো পরিত্যাক্ত খোলা জায়গা দেখা</td></tr></t>
+                                    <t t-if="ques_26"><tr><td>মাথা ভার হয়ে থাকা বা মাথা ব্যথা লেগে থাকা কোনো ওষুধে ফায়দা না হওয়া</td></tr></t>
+                                    <t t-if="ques_27"><tr><td>ব্যাকপেইন, বিশেষত মেরুদণ্ডের নিচের দিকে ব্যথা হওয়া</td></tr></t>
+                                    <t t-if="ques_28"><tr><td>শরীরে কোনো অঙ্গে সব সময় ব্যথা থাকা</td></tr></t>
+                                    <t t-if="ques_29"><tr><td>কারণে অকারণে সর্বদা চিন্তিত থাকা</td></tr></t>
+                                    <t t-if="ques_30"><tr><td>অতিরিক্ত সন্দেহপ্রবন হয়ে যাওয়া</td></tr></t>
+                                    <t t-if="ques_31"><tr><td>অতিরিক্ত ওয়াসওয়াসা বা সুচিবায়ু হওয়া</td></tr></t>
+                                    <t t-if="ques_32"><tr><td>আপনজনদের বিরক্ত লাগা</td></tr></t>
+                                    <t t-if="ques_33"><tr><td>ইসলামের বেপারে মাথায় অবমাননাকর চিন্তা আশা</td></tr></t>
+                                    <t t-if="ques_34"><tr><td>এস্তেঞ্জার বা মলমূত্রে অতিরিক্ত দুর্গন্ধ হওয়া</td></tr></t>
+                                    <t t-if="ques_35"><tr><td>কোনো কারণ ছাড়া কারো প্রতি অতিরিক্ত আকৃষ্ট হয়ে যাওয়া</td></tr></t>
+                                    <t t-if="other_problems"><tr><td>অন্য কোনো সমস্যা (যদি থাকে)</td></tr></t>
+                                    <t t-if="promising_true"><tr><td>আমি কন্ডিশন গুলো পড়েছি এবং স্বীকারোক্তি দিচ্ছি</td></tr></t>
+                                    <t t-if="payment_method"><tr><td>ফর্ম পূরণ বাবদ ১১০ টাকা সেন্ড মানি করুন (+8801711532483 পার্সোনাল) (required</td></tr></t>
+                                    <t t-if="payment_transactionid"><tr><td>পেমেন্ট ট্রানসাকশান আইডি দিন (required)</td></tr></t>
+
+
+                                </table>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Baitul Hijama Form ',
+    'version': '15.0.1',
+    'summary': 'Baitul Hijama Patient',
+    'sequence': -100,
+    'description': """Baitul Hijama Patient """,
+    'category': 'Productivity',
+    'website': 'https://www.eagle-erp.com',
+    'license': 'LGPL-3',
+    'images': [],
+    'depends': ['sale', 'website'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/menu.xml',
+        'report/report.xml',
+        'views/bhf.xml',
+        'views/ticket.xml',
+        'views/ticket_tree.xml',
+    ],
+    'demo': [],
+    'qweb': [],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

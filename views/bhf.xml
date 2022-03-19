@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="bhf" name="Pataint Form">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container" style="margin-top:20px; margin-bottom:20px">
+                        <div class="row">
+                            <div class="col-lg-6 offset-lg-2">
+                                <h3>রোগীর ফর্ম</h3>
+                                <form role="form" action="/create/bhf/" method="post">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                                <div class="form-group">
+                                    <label for="name" class="control-label">রোগীর নাম</label>
+                                    <input type="text" name="name" t-att-value="name" id="name" class="form-control" placeholder="পুরো নাম"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="patient_age" class="control-label">রোগীর বয়স</label>
+                                    <input type="text" name="patient_age" t-att-value="patient_age" id="name" class="form-control" placeholder="রোগীর বয়স"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="marital_status" class="control-label">বৈবাহিক অবস্থা</label>
+                                    <select name="marital_status" t-att-value="marital_status" id="marital_status" class="form-control" placeholder="বৈবাহিক অবস্থা">
+                                        <option value="">Select</option>
+                                        <option value="married">বিবাহিত</option>
+                                        <option value="unmarried">অবিবাহিত</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="mobile" class="control-label">মোবাইল নম্বর</label>
+                                    <input type="tel" name="mobile" t-att-value="mobile" id="mobile" class="form-control" placeholder="মোবাইল নম্বর"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="whatsapp_imo" class="control-label">Whatsapp/Imo no.</label>
+                                    <input type="tel" name="whatsapp_imo" t-att-value="whatsapp_imo" id="whatsapp_imo" class="form-control" placeholder="Whatsapp/Imo no."/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="father_name" class="control-label">বাবার নাম</label>
+                                    <input type="text" name="father_name" t-att-value="father_name" id="father_name" class="form-control" placeholder="বাবার নাম"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="mother_name" class="control-label">মায়ের নাম</label>
+                                    <input type="text" name="mother_name" t-att-value="mother_name" id="mother_name" class="form-control" placeholder="মায়ের নাম"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="control-label">Email</label>
+                                    <input type="text" name="email"  t-att-value="email" id="email" class="form-control" placeholder="Email Address"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address" class="control-label">ঠিকানা</label>
+                                    <input type="text" name="address"  t-att-value="address"  id="address"  class="form-control" placeholder="পুরো ঠিকানা"/>
+                                </div>
+
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_01" class="custom-control-input" name="ques_01" t-att-value="ques_01"/>
+                                    <label for="ques_01" class="custom-control-label" name="ques_01">একের পর এক অসুখ লেগেই থাকে কিন্তু মেডিকেল টেস্ট এ ধরা পরে না</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_02" class="custom-control-input" name="ques_02" t-att-value="ques_02"/>
+                                    <label for="ques_02" class="custom-control-label" name="ques_02">সর্দি, কাশি, জ্বর লেগে থাকা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_03" class="custom-control-input" name="ques_03" t-att-value="ques_03"/>
+                                    <label for="ques_03" class="custom-control-label" name="ques_03">ডায়রিয়া, আমাশয় ভালো না হওয়া</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_04" class="custom-control-input" name="ques_04" t-att-value="ques_04"/>
+                                    <label for="ques_04" class="custom-control-label" name="ques_04">পড়াশোনায় মন না বসা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_05" class="custom-control-input" name="ques_05" t-att-value="ques_05"/>
+                                    <label for="ques_05" class="custom-control-label" name="ques_05">এবাদতে আগ্রহ হারিয়ে ফেলা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_06" class="custom-control-input" name="ques_06" t-att-value="ques_06"/>
+                                    <label for="ques_06" class="custom-control-label" name="ques_06">প্রায়শই শরীর দুর্বল থাকা, বমি বমি ভাব লাগা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_07" class="custom-control-input" name="ques_07" t-att-value="ques_07"/>
+                                    <label for="ques_07" class="custom-control-label" name="ques_07">সব সময় ঘুম ঘুম ভাব থাকা, সারাদিন হাই উঠা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_08" class="custom-control-input" name="ques_08" t-att-value="ques_08"/>
+                                    <label for="ques_08" class="custom-control-label" name="ques_08">খাবারে রুচি না পাওয়া, ক্ষুধামন্দা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_09" class="custom-control-input" name="ques_09" t-att-value="ques_09"/>
+                                    <label for="ques_09" class="custom-control-label" name="ques_09">অহেতুক মেজাজ বিগড়ে থাকা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_10" class="custom-control-input" name="ques_10" t-att-value="ques_10"/>
+                                    <label for="ques_10" class="custom-control-label" name="ques_10">অল্পতে রাগ উঠা এবং সহজে রাগ দূর না হওয়া</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_11" class="custom-control-input" name="ques_11" t-att-value="ques_11"/>
+                                    <label for="ques_11" class="custom-control-label" name="ques_11">বুক ধড়পড় করা, ডোম বন্ধ বা অস্বস্তি লাগা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_12" class="custom-control-input" name="ques_12" t-att-value="ques_12"/>
+                                    <label for="ques_12" class="custom-control-label" name="ques_12">অহেতুক মাথা ঝিম ধরে থাকা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_13" class="custom-control-input" name="ques_13" t-att-value="ques_13"/>
+                                    <label for="ques_13" class="custom-control-label" name="ques_13">পেটে প্রকার গ্যাস হওয়া, ওষুধ খেয়েও ফায়দা না হওয়া</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_14" class="custom-control-input" name="ques_14" t-att-value="ques_14"/>
+                                    <label for="ques_14" class="custom-control-label" name="ques_14">কোনো কারণ ছাড়াই কান্না আসা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_15" class="custom-control-input" name="ques_15" t-att-value="ques_15"/>
+                                    <label for="ques_15" class="custom-control-label" name="ques_15">আত্মীয় স্বজন বা বন্ধুদের সাথে দেখা করতে ভালো না লাগা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_16" class="custom-control-input" name="ques_16" t-att-value="ques_16"/>
+                                    <label for="ques_16" class="custom-control-label" name="ques_16">নিদ্রাহীনতা অথবা প্রশান্তিময় ঘুম না হওয়া</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_17" class="custom-control-input" name="ques_17" t-att-value="ques_17"/>
+                                    <label for="ques_17" class="custom-control-label" name="ques_17">উদ্বিগ্নতা, সারাক্ষন অস্থিরতা বিরাজমান থাকা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_18" class="custom-control-input" name="ques_18" t-att-value="ques_18"/>
+                                    <label for="ques_18" class="custom-control-label" name="ques_18">মাঝে মাঝে বোবায় ধরা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_19" class="custom-control-input" name="ques_19" t-att-value="ques_19"/>
+                                    <label for="ques_19" class="custom-control-label" name="ques_19">ঘুমের মাঝে চিৎকার করা, গোংরানো, হাসি বা কান্না করা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_20" class="custom-control-input" name="ques_20" t-att-value="ques_20"/>
+                                    <label for="ques_20" class="custom-control-label" name="ques_20">ঘুমের মধ্যে হাঁটাহাঁটি করা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_21" class="custom-control-input" name="ques_21" t-att-value="ques_21"/>
+                                    <label for="ques_21" class="custom-control-label" name="ques_21">স্বপ্নে কোনো প্রাণী কে আক্রমণ বা ধাওয়া করতে দেখা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_22" class="custom-control-input" name="ques_22" t-att-value="ques_22"/>
+                                    <label for="ques_22" class="custom-control-label" name="ques_22">স্বপ্নে নিজেকে উঁচু কোনো জায়গা থেকে পরে যেতে দেখা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_23" class="custom-control-input" name="ques_23" t-att-value="ques_23"/>
+                                    <label for="ques_23" class="custom-control-label" name="ques_23">স্বপ্নে জ্বিন, ভুত বা ভয়ংকর কিছু দেখা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_24" class="custom-control-input" name="ques_24" t-att-value="ques_24"/>
+                                    <label for="ques_24" class="custom-control-label" name="ques_24">ঘুমের ভেতর কেঁপে উঠা বা ঝাকি দিয়ে জেগে যাওয়া</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_25" class="custom-control-input" name="ques_25" t-att-value="ques_25"/>
+                                    <label for="ques_25" class="custom-control-label" name="ques_25">স্বপ্নে কবরস্থান, শ্মশান বা কোনো পরিত্যাক্ত খোলা জায়গা দেখা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_26" class="custom-control-input" name="ques_26" t-att-value="ques_26"/>
+                                    <label for="ques_26" class="custom-control-label" name="ques_26">মাথা ভার হয়ে থাকা বা মাথা ব্যথা লেগে থাকা কোনো ওষুধে ফায়দা না হওয়া</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_27" class="custom-control-input" name="ques_27" t-att-value="ques_27"/>
+                                    <label for="ques_27" class="custom-control-label" name="ques_27">ব্যাকপেইন, বিশেষত মেরুদণ্ডের নিচের দিকে ব্যথা হওয়া</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_28" class="custom-control-input" name="ques_28" t-att-value="ques_28"/>
+                                    <label for="ques_28" class="custom-control-label" name="ques_28">শরীরে কোনো অঙ্গে সব সময় ব্যথা থাকা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_29" class="custom-control-input" name="ques_29" t-att-value="ques_29"/>
+                                    <label for="ques_29" class="custom-control-label" name="ques_29">স্বপ্নে জ্বিন, ভুত বা ভয়ংকর কিছু দেখা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_30" class="custom-control-input" name="ques_30" t-att-value="ques_30"/>
+                                    <label for="ques_30" class="custom-control-label" name="ques_30">কারণে অকারণে সর্বদা চিন্তিত থাকা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_31" class="custom-control-input" name="ques_31" t-att-value="ques_31"/>
+                                    <label for="ques_31" class="custom-control-label" name="ques_31">অতিরিক্ত সন্দেহপ্রবন হয়ে যাওয়া</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_32" class="custom-control-input" name="ques_32" t-att-value="ques_32"/>
+                                    <label for="ques_32" class="custom-control-label" name="ques_32">অতিরিক্ত ওয়াসওয়াসা বা সুচিবায়ু হওয়া</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_33" class="custom-control-input" name="ques_33" t-att-value="ques_33"/>
+                                    <label for="ques_33" class="custom-control-label" name="ques_33">আপনজনদের বিরক্ত লাগা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_34" class="custom-control-input" name="ques_34" t-att-value="ques_34"/>
+                                    <label for="ques_34" class="custom-control-label" name="ques_34">ইসলামের বেপারে মাথায় অবমাননাকর চিন্তা আশা</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ques_35" class="custom-control-input" name="ques_35" t-att-value="ques_35"/>
+                                    <label for="ques_35" class="custom-control-label" name="ques_35">এস্তেঞ্জার বা মলমূত্রে অতিরিক্ত দুর্গন্ধ হওয়া</label>
+                                </div>
+
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="promising_true" class="custom-control-input" name="promising_true" t-att-value="promising_true"/>
+                                    <label for="promising_true" class="custom-control-label" name="promising_true">আমি কন্ডিশন গুলো পড়েছি এবং স্বীকারোক্তি দিচ্ছি</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="payment_method" class="control-label">পেমেন্ট পদ্ধতি</label>
+                                    <select name="payment_method" t-att-value="payment_method" id="payment_method" class="form-control" placeholder="পেমেন্ট পদ্ধতি">
+                                        <option value="">Select</option>
+                                        <option value="bkash">বিকাশ</option>
+                                        <option value="nagad">নগদ</option>
+                                        <option value="rocket">রকেট</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="payment_transactionid" class="control-label">পেমেন্ট ট্রানসাকশান আইডি দিন (required)</label>
+                                    <input type="text" name="payment_transactionid"  t-att-value="payment_transactionid"  id="payment_transactionid"  class="form-control" placeholder="পেমেন্ট ট্রানসাকশান আইডি দিন"/>
+                                </div>
+
+
+                                    <div class="clearfix">
+                                        <button type="submit" class="btn btn-primary pull-left">Submit</button>
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </t>
+    </template>
+
+
+
+
+</odoo>
